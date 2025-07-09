@@ -1,0 +1,4 @@
+#!/bin/sh
+set -e
+sed -i 's/^\(APACHE2_OPTS=.*\)\"$/\1 -D PASSENGER"/' /etc/conf.d/apache2
+sed -i 's/^CapabilityBoundingSet=/#CapabilityBoundingSet=/' /usr/lib/systemd/system/apache2.service

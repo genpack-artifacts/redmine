@@ -1,0 +1,26 @@
+{
+    packages: [
+        "genpack/paravirt",
+        "dev-db/mysql",
+        "mail-mta/postfix",
+        "net-fs/samba",
+        "dev-vcs/git",
+        "dev-util/ragel",
+        "dev-ruby/racc",
+        "dev-ruby/rmagick",
+        "dev-ruby/public_suffix",
+        "dev-ruby/htmlentities",
+        "dev-ruby/ruby-openid",
+        "dev-ruby/yard",
+        "www-servers/puma",
+        "dev-ruby/addressable",
+        "dev-libs/openssl-compat", // needed by passenger
+        "www-apache/passenger",
+        "#dev-ruby/bundler"
+    ],
+    use: {
+        "www-apache/passenger": "apache2",
+        "www-servers/apache": "APACHE2_MODULES: http2 proxy proxy_connect proxy_http proxy_ajp proxy_fcgi remoteip"
+    },
+    services: ["apache2","mysqld","postfix"]
+}
