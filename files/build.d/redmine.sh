@@ -1,5 +1,5 @@
 set -e
-download https://www.redmine.org/releases/redmine-6.0.6.tar.gz | tar zxf - --strip-components=1 -C /var/www/localhost/htdocs
+download $(get-github-download-url redmine redmine @tarball) | tar zxf - --strip-components=1 -C /var/www/localhost/htdocs
 
 chown -R apache:apache /var/www/localhost
 rm -rf /usr/local/lib64/ruby/gems/*/cache
